@@ -91,6 +91,7 @@ var register = function (server, options, next) {
     server.route({
         method: "GET",
         path: options.graphiqlURL + "/{name*}",
+        config: options.routeConfig,
         handler: co.wrap(function * (request, reply) {
             var name = request.params.name
             var files, content
