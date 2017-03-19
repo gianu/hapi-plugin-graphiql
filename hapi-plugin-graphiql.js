@@ -82,6 +82,7 @@ var register = function (server, options, next) {
     server.route({
         method: "GET",
         path: options.graphiqlURL,
+        config: options.routeConfig || {},
         handler: function (request, reply) {
             reply.redirect(options.graphiqlURL + "/")
         }
